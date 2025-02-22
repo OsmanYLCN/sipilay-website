@@ -1,0 +1,134 @@
+/* Genel Stil */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #ffccd5;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Başlıklar */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #d6336c;
+}
+
+/* Fotoğraf Galerisi */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive Grid */
+  gap: 15px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px; /* Fotoğrafların sabit yüksekliği */
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* Büyütme Kutusu */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+.lightbox p {
+  color: white;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sevgilime Not Butonu */
+.note-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.note-button:hover {
+  background-color: #d81b60;
+}
+
+/* Not Penceresi */
+.note-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.note-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note-content button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: #ff4081;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.note-content button:hover {
+  background: #d81b60;
+}
